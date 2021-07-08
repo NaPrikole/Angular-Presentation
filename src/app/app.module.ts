@@ -1,16 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { ProgrammingLanguagesComponent } from './programming-languages/programming-languages.component';
+import { LanguagesDetailsComponent } from './programming-languages/languages-details/languages-details.component';
+import { LanguagesListComponent } from './programming-languages/languages-list/languages-list.component';
+import { LanguageItemComponent } from './programming-languages/languages-list/language-item/language-item.component';
+import { WishesListComponent } from './wishes-list/wishes-list.component';
+import { ListEditComponent } from './wishes-list/list-edit/list-edit.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    ProgrammingLanguagesComponent,
+    LanguagesDetailsComponent,
+    LanguagesListComponent,
+    LanguageItemComponent,
+    WishesListComponent,
+    ListEditComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
