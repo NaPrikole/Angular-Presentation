@@ -1,3 +1,19 @@
-<div class="col-md-5">
-  <app-language-item></app-language-item>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success mb-3">New Language</button>
+  </div>
+</div>
+<div class="row">
+  <div class="cos-xs-12">
+    <a class="flex item-setings mb-2 p-3" href="#" *ngFor="let lang of programmingLanguages">
+      <div class="">
+        <h4 class="list-group-item-heading">{{ lang.name }}</h4>
+        <p class="list-group-item-text"> {{ lang.description }}</p>
+      </div>
+      <span class="">
+        <img [src]="lang.imagePath" alt="" class="image-responsive pl-2" style="height: 50px;">
+      </span>
+    </a>
+    <app-language-item></app-language-item>
+  </div>
 </div>
