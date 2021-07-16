@@ -14,7 +14,10 @@ export class WishesListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  addNewLanguage(item: Languages) {
+    this.languages.push(item);
   }
 
 }

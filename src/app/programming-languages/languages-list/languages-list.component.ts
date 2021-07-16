@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { LanguagesModel } from '../languages.model';
 
 @Component({
@@ -10,15 +10,21 @@ export class LanguagesListComponent implements OnInit {
   programmingLanguages: LanguagesModel[] = [
     new LanguagesModel('JavaScript', 'Language for web development',
     'http://truelogic.org/wordpress/wp-content/uploads/2015/10/javascript.jpg'),
-    new LanguagesModel('JavaScript', 'Language for web development',
+    new LanguagesModel('NodeJS', 'Language for web development',
     'http://truelogic.org/wordpress/wp-content/uploads/2015/10/javascript.jpg'),
-    new LanguagesModel('JavaScript', 'Language for web development',
+    new LanguagesModel('HTML', 'Language for web development',
     'http://truelogic.org/wordpress/wp-content/uploads/2015/10/javascript.jpg')
   ];
 
-  constructor() { }
+  @Output() itemDataToProgLangs = new EventEmitter<LanguagesModel>()
+
+  constructor() {}
 
   ngOnInit(): void {
+  }
+
+  selectedItemData(itemData: any) {
+    this.itemDataToProgLangs.emit(itemData);
   }
 
 }

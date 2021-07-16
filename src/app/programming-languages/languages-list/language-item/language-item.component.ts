@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { LanguagesModel } from '../../languages.model';
 
 @Component({
   selector: 'app-language-item',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./language-item.component.scss']
 })
 export class LanguageItemComponent implements OnInit {
+  @Output() selectedItemData = new EventEmitter<LanguagesModel>()
+  @Input() langItem: LanguagesModel;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onItemSelect() {
+    this.selectedItemData.emit(this.langItem);
   }
 
 }

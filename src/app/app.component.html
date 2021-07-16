@@ -1,9 +1,15 @@
-<app-header></app-header>
+<app-header
+  (navigationFires)="navigationClicked($event)"
+  ></app-header>
 <div class="container m-5">
   <div class="row">
     <div class="col-md-12">
-      <app-programming-languages></app-programming-languages>
-      <app-wishes-list></app-wishes-list>
+      <app-programming-languages
+      *ngIf="tabLink === 'langlist'"
+      ></app-programming-languages>
+      <app-wishes-list
+      *ngIf="tabLink === 'wisheslist'"
+      ></app-wishes-list>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { LanguagesModel } from '../languages.model';
 
 @Component({
   selector: 'app-languages-details',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./languages-details.component.scss']
 })
 export class LanguagesDetailsComponent implements OnInit {
+  @Input() dataItem: LanguagesModel;
 
   constructor() { }
 

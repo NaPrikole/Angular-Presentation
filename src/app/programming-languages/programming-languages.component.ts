@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguagesModel } from './languages.model';
 
 @Component({
   selector: 'app-programming-languages',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./programming-languages.component.scss']
 })
 export class ProgrammingLanguagesComponent implements OnInit {
+  dataItem: LanguagesModel;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+  }
+
+  selectedItemData(dataItem: LanguagesModel) {
+    this.dataItem = dataItem;
   }
 
 }

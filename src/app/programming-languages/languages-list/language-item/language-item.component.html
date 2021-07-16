@@ -1,0 +1,13 @@
+<a
+  class="list-group-item mt-2"
+  href="#"
+  (click)="onItemSelect()"
+>
+  <div class="">
+    <h4 class="list-group-item-heading">{{ langItem.name }}</h4>
+    <p class="list-group-item-text"> {{ langItem.description }}</p>
+  </div>
+  <span class="">
+    <img [src]="langItem.imagePath" alt="" class="image-responsive pl-2" style="height: 50px;">
+  </span>
+</a>
