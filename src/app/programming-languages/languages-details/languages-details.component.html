@@ -13,13 +13,14 @@
     <div class="btn-group">
       <button
         type="button"
-        class="btn btn-primary dropdown-toggle">
+        class="btn btn-primary dropdown-toggle"
+        data-toggle="dropdown">
         Manage lang
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#"></a>To lang list</li>
-        <li><a href="#"></a>Edit Lang description</li>
-        <li><a href="#"></a>Delete lang</li>
+        <li class="dropdown-item"><a href="#"></a>To lang list</li>
+        <li class="dropdown-item"><a href="#"></a>Edit Lang description</li>
+        <li class="dropdown-item"><a href="#"></a>Delete lang</li>
       </ul>
     </div>
   </div>
@@ -31,6 +32,15 @@
 </div>
 <div class="row">
   <div class="col-xs 12">
-    Features
+    <ul class="list-group">
+      <a
+        href="#"
+        class="list-group-item"
+        style="cursor: pointer;"
+        *ngFor="let lang of dataItem.languages"
+      >
+      {{ lang.name }} ({{ lang.countOfFeatures }})
+      </a>
+    </ul>
   </div>
 </div>

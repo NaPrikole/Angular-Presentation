@@ -9,6 +9,7 @@ import { LanguagesListComponent } from './programming-languages/languages-list/l
 import { LanguageItemComponent } from './programming-languages/languages-list/language-item/language-item.component';
 import { WishesListComponent } from './wishes-list/wishes-list.component';
 import { ListEditComponent } from './wishes-list/list-edit/list-edit.component';
+import { DropdownDirective } from './directives/dropdown.derictive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ListEditComponent } from './wishes-list/list-edit/list-edit.component';
     LanguageItemComponent,
     WishesListComponent,
     ListEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

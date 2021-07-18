@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { LanguagesModel } from '../languages.model';
+import { LanguagesListService } from '../../services/languages-list.service';
 
 @Component({
   selector: 'app-languages-list',
@@ -7,24 +8,12 @@ import { LanguagesModel } from '../languages.model';
   styleUrls: ['./languages-list.component.scss']
 })
 export class LanguagesListComponent implements OnInit {
-  programmingLanguages: LanguagesModel[] = [
-    new LanguagesModel('JavaScript', 'Language for web development',
-    'http://truelogic.org/wordpress/wp-content/uploads/2015/10/javascript.jpg'),
-    new LanguagesModel('NodeJS', 'Language for web development',
-    'http://truelogic.org/wordpress/wp-content/uploads/2015/10/javascript.jpg'),
-    new LanguagesModel('HTML', 'Language for web development',
-    'http://truelogic.org/wordpress/wp-content/uploads/2015/10/javascript.jpg')
-  ];
+  programmingLanguages: LanguagesModel[];
 
-  @Output() itemDataToProgLangs = new EventEmitter<LanguagesModel>()
-
-  constructor() {}
+  constructor(private langSrv: LanguagesListService) {}
 
   ngOnInit(): void {
-  }
-
-  selectedItemData(itemData: any) {
-    this.itemDataToProgLangs.emit(itemData);
+    this.programmingLanguages = this.langSrv.getProgrammingLanguages();
   }
 
 }

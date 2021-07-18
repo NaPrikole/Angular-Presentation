@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Languages } from '../shared/features.model';
+import { WishesListService } from '../services/wishes-list.service';
 
 @Component({
   selector: 'app-wishes-list',
@@ -7,17 +8,12 @@ import { Languages } from '../shared/features.model';
   styleUrls: ['./wishes-list.component.scss']
 })
 export class WishesListComponent implements OnInit {
-  languages: Languages[] = [
-    new Languages('JavaScript', 10),
-    new Languages('NodeJs', 20)
-  ];
+  languages: Languages[];
 
-  constructor() {}
+  constructor(private wishesSrv: WishesListService) {}
 
-  ngOnInit(): void {}
-
-  addNewLanguage(item: Languages) {
-    this.languages.push(item);
+  ngOnInit(): void {
+    this.languages = this.wishesSrv.getLanguages();
   }
 
 }

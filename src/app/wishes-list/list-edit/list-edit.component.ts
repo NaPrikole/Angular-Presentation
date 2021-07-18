@@ -1,5 +1,5 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { Languages } from 'src/app/shared/features.model';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { WishesListService } from '../../services/wishes-list.service';
 
 @Component({
   selector: 'app-list-edit',
@@ -9,14 +9,13 @@ import { Languages } from 'src/app/shared/features.model';
 export class ListEditComponent implements OnInit {
   @ViewChild('nameInput') nameInput: ElementRef;
   @ViewChild('amoutInput') amoutInput: ElementRef;
-  @Output() languageStrucrure = new EventEmitter<Languages>();
 
-  constructor() { }
+  constructor(private wishesSrv: WishesListService) { }
 
   ngOnInit(): void {}
 
   onAddNewLang() {
-    this.languageStrucrure.emit({
+    this.wishesSrv.addNewLanguage({
       name: this.nameInput.nativeElement.value,
       countOfFeatures: this.amoutInput.nativeElement.value
     });

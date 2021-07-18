@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguagesListService } from '../services/languages-list.service';
 import { LanguagesModel } from './languages.model';
 
 @Component({
@@ -9,13 +10,12 @@ import { LanguagesModel } from './languages.model';
 export class ProgrammingLanguagesComponent implements OnInit {
   dataItem: LanguagesModel;
 
-  constructor() {}
+  constructor(private langSrv: LanguagesListService) {}
 
   ngOnInit(): void {
-  }
-
-  selectedItemData(dataItem: LanguagesModel) {
-    this.dataItem = dataItem;
+    this.langSrv.selectedLang.subscribe((langItem: LanguagesModel) => {
+      this.dataItem = langItem;
+    });
   }
 
 }
